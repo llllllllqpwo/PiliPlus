@@ -2034,7 +2034,9 @@ class _PLVideoPlayerState extends State<PLVideoPlayer>
                   flipY: plPlayerController.flipY.value,
                   child: FittedBox(
                     fit: videoFit.boxFit,
-                    alignment: widget.alignment,
+                    alignment: plPlayerController.isFullScreen.value
+                      ? Alignment.centerLeft
+                      : widget.alignment,
                     child: SimpleVideo(
                       controller: plPlayerController.videoController!,
                       fill: widget.fill,
